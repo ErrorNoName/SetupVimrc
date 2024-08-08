@@ -8,10 +8,30 @@ Plug 'sheerun/vim-polyglot'  " Support de syntaxe amélioré
 Plug 'jiangmiao/auto-pairs'  " Fermeture automatique des parenthèses, etc.
 Plug 'tpope/vim-surround'  " Manipulation facile des paires de caractères
 Plug 'preservim/nerdtree'  " Explorateur de fichiers
-Plug 'vim-airline/vim-airline'  " Barre de statut améliorée
+Plug 'catppuccin/vim'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+
+
+" Nouveaux plugins ajoutés
+Plug '42Paris/42header'
+" Plug 'cacharle/c_formatter_42.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'alexandregv/norminette-vim'
 
 call plug#end()
+
+" Theme cappuccin
+syntax enable
+set background=dark
+colorscheme catppuccin_mocha
+
+let g:airline_theme = 'catppuccin_mocha'
+
+" Config Header42
+let g:user42 = 'wlecoint'
+let g:mail42 = 'wlecoint@student.42lyon.fr'
 
 " Configuration de base
 syntax on
@@ -72,7 +92,7 @@ vnoremap < <gv  " Garder la sélection après indentation
 vnoremap > >gv
 
 " Nouveaux raccourcis
-inoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w<CR>i
 nnoremap <C-x> :q!<CR>
 nnoremap <C-a> ggVG
 nnoremap <C-f> /
@@ -97,22 +117,25 @@ inoremap <C-v> <Esc>pi
 " Afficher les raccourcis (Ctrl-H)
 nnoremap <C-h> :call ShowShortcuts()<CR>
 
-" Fonction pour afficher les raccourcis
+" Fonction pour afficher les raccourcis avec des émoticônes
 function! ShowShortcuts()
   let shortcuts = [
-    \ 'Ctrl-S : Sauvegarder',
-    \ 'Ctrl-X : Quitter sans sauvegarder',
-    \ 'Ctrl-A : Tout sélectionner',
-    \ 'Ctrl-C : Copier (en mode visuel)',
-    \ 'Ctrl-X : Couper (en mode visuel)',
-    \ 'Ctrl-V : Coller',
-    \ 'Ctrl-F : Rechercher',
-    \ 'Ctrl-N : Toggle NERDTree',
-    \ 'Ctrl-H : Afficher cette aide',
-    \ 'Espace : Plier/déplier le code',
-    \ '< ou > : Indenter (en mode visuel)',
-    \ 'Ctrl-D : Supprimer le fichier'
+    \ '📝 Ctrl-S : Sauvegarder',
+    \ '❌ Ctrl-X : Quitter sans sauvegarder',
+    \ '🔲 Ctrl-A : Tout sélectionner',
+    \ '📋 Ctrl-C : Copier (en mode visuel)',
+    \ '✂️ Ctrl-X : Couper (en mode visuel)',
+    \ '📌 Ctrl-V : Coller',
+    \ '🔍 Ctrl-F : Rechercher',
+    \ '📂 Ctrl-N : Toggle NERDTree',
+    \ '🆘 Ctrl-H : Afficher cette aide',
+    \ '↔️ Espace : Plier/déplier le code',
+    \ '🔼 < ou > : Indenter (en mode visuel)',
+    \ '🗑️ Ctrl-D : Supprimer le fichier'
     \ ]
+  echohl WarningMsg
+  echo '🔧 Liste des raccourcis :'
+  echohl None
   echo join(shortcuts, "\n")
 endfunction
 
