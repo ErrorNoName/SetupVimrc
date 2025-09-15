@@ -38,6 +38,11 @@ Vim-Plug est un gestionnaire de plugins pour Vim.
    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
    ```
+   **Installer pour Nvim** :
+   ```
+   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   ```
 
 ## 3. Configuration de Base de Vim
 
