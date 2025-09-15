@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
 fi
 
 FILE=$1
-WEBHOOK_URL="https://discord.com/api/webhooks/1271217328918630400/0BO2Jg2-xLeM5MT27AwnwmZ0SFPuzYB3f8gXwZR8JSW2Azlmo1gV1C8SfCbDDw8jVSB8"
+WEBHOOK_URL="https://discord.com/api/webhooks/1417081239227072512/Iu10ra1fdVEgTtRDu2dhMf9uRJ46Xnf5UmAAYUyljKvf8QgBTvREo2TgwPLQlVz6XFWg"
 LAST_CONTENT_FILE=".last_content_$FILE"
 
 # Vérifier si le fichier existe
